@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+</head>
+<body>
+    <H2>Lista de Clientes</H2>
+    <hr>   
+    {% for c in clientes %}
+           <p> {{c.nombre}}</p>
+   
+    
+            <a href= "{% url 'updateCli' c.id %}">Modificar</a>
+            <form action= "{% url 'deleteCli' c.id %}" method="post">
+                {% csrf_token%}
+            <input type="submit" value="Borrar">
+            </form>
+    
+    {% endfor %}
+    <hr>
+    <a href= "{% url 'home' %}">Home</a>
+</body>
+</html>
+ 

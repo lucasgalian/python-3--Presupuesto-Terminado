@@ -1,0 +1,8 @@
+<h2>Modificar Presupuesto </h2>
+    {cliente.nombre}
+    <form action="{% url 'create_pres' %}"method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Guardar cambios</button>
+    </form>
+<a href= "{% url 'listaPres' %}">Atras</a>
