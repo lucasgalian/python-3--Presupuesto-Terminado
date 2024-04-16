@@ -10,7 +10,6 @@ class Cliente(models.Model):
      def __str__(self):
           return self.nombre
 class Presupuesto(models.Model):
-      
        titulo = models.CharField(max_length=50 )
        materiaPrima = models.CharField(max_length= 50)
        manoDeObra = models.IntegerField()

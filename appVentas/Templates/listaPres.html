@@ -1,49 +1,90 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios</title>
-    <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
   
 </head>
 <body>
+{% block contect %}
+
+  <h2>Planilla de Presupuestos</h2>
+      {% for s in servicios %} <hr>
+      {% if s.titulo == 'Mantenimiento' %}
     <div class="container">
-        <h2>Black/Dark Table</h2>
-        <p>The .table-dark class adds a black background to the table:</p>            
-        <table class="table table-dark">
-          <thead> 
-            <tr>
-              <th>titulo</th>
-              <th>materiaPrima</th>
-              <th>manoDeObra</th>
-              <th>fecha</th>
-              <th>precio</s></th>
-            </tr>
-          </thead>
-        </table>
-      </div>
-      
-    <h2>Planilla de Presupuestos</h2>
-    <ul>
-        
-        {% for s in servicios %} 
-            <p>{{s.titulo}}</p>
+      <div class ="row">
+        <div class="card" style="width: 18rem;">
+          <img src="{% static 'imgs/instalacion.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{c.nombre}}</h5>
+            <p class="card-text">{{s.materiaPrima}}</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{s.usuario}}</li>
+            <li class="list-group-item">{{s.fecha}}</li>
+            <li class="list-group-item">{{s.precio}}</li>
+          </ul>
+          <div class="card-body">
+            <a href="{% url 'updatePres' s.id %}" class="card-link"><input type="submit" value="Cambiar"></a>
             <form action= "{% url 'deletePres' s.id %}" method="post">
-                {% csrf_token%}
+              {% csrf_token %}
              <input type="submit" value="Borrar">
-             <a href="{% url 'updatePres' s.id %}">Modificar</a> 
-            </form ></li><hr>
-              
-        {% endfor %}
-         
-    </ul> <hr>
+            </form >
+          </div>
+        </div>
+        {% elif s.titulo == 'Instalacion' %} 
+        <div class="card" style="width: 18rem;">
+          <img src="{% static 'imgs/servicio.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{c.nombre}}</h5>
+            <p class="card-text">{{s.materiaPrima}}</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{s.usuario}}</li>
+            <li class="list-group-item">{{s.fecha}}</li>
+            <li class="list-group-item">{{s.precio}}</li>
+          </ul>
+          <div class="card-body">
+            <a href="{% url 'updatePres' s.id %}" class="card-link"><input type="submit" value="Cambiar"></a>
+            <form action= "{% url 'deletePres' s.id %}" method="post">
+              {% csrf_token %}
+             <input type="submit" value="Borrar">
+            </form >
+          </div>
+        </div>
+          
+        {% else %} 
+        <div class="card" style="width: 18rem;">
+          <img src="{% static 'imgs/servicio.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{c.nombre}}</h5>
+            <p class="card-text">{{s.materiaPrima}}</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{s.usuario}}</li>
+            <li class="list-group-item">{{s.fecha}}</li>
+            <li class="list-group-item">{{s.precio}}</li>
+          </ul>
+          <div class="card-body">
+            <a href="{% url 'updatePres' s.id %}" class="card-link"><input type="submit" value="Cambiar"></a>
+            <form action= "{% url 'deletePres' s.id %}" method="post">
+              {% csrf_token %}
+             <input type="submit" value="Borrar">
+            </form >
+          </div>
+        </div>
+        {% endif %}       
+       <hr>
+      </div>
+    </div>
+    {% endfor %}
+        
+{% endblock %}
+
     <a href="{% url 'home' %}">Home</a>
-    <hr>   
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    
 </body>
 </html>
