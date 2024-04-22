@@ -6,6 +6,8 @@ platformdirs==4.2.0
 sqlparse==0.4.4
 tzdata==2024.1
 virtualenv==20.25.1
+
+
 -------------------
 Lucas Ariel Galian 
 Guido Pasciucco

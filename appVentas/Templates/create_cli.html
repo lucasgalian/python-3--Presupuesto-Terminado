@@ -23,23 +23,30 @@
           <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Lista de Clientes</button></a>
         </li>
       </ul>
-    <h2>Crear Nuevo Cliente</h2> 
-    
-        <div class="card">
-            <div class="card-body">
-                
-                <form action =""   method="post">
-                    {% csrf_token %}
-                    
-                    {{ form.as_p }}
-              
-                    <br>
-                
-                    <button type="submit" id="btnEnviar" class="button" >Guardar</button>
-                </form>
-        </div>
-    </div>
-   
+      <br>
+      <div class="row">
+          <div class="col-12 col-md-6 offset-md-3">
+            <h2>Crear Nuevo Cliente</h2> 
+              <div class="card">
+                  <div class="card-body">
+                        <form action="" method="post">
+                          
+                            {% csrf_token %}
+                            {{ form }}
+             
+                          <br>
+                          <div class="d-flex justify-content-end">
+                          <input type="reset" value="Cancelar" class="btn btn-secondary">
+                          &nbsp;
+                          <button type="submit" id="btnEnviar" class="btn btn-primary" color="bundle" >Guardar</button>
+                          </div>  
+                        </form>
+                  </div>
+                </div>
+            </div>
+      </div>
+          
+     
 
 <a href= "{% url 'home' %}">Atras</a>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
