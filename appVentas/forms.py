@@ -1,7 +1,8 @@
 from .models import Presupuesto, Cliente
 from django. forms import ModelForm
 class ClienteForm(ModelForm):
-    class Meta:
+    
+ class Meta:
         model = Cliente
         fields = ['nombre','apellido', 'correo', 'celular']
 
