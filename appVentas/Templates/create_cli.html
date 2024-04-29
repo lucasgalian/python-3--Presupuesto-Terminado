@@ -14,24 +14,28 @@
 
 <body>
   <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav2" role="tablist"
-    style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
-    <li class="nav-item" role="presentation"><a href="{% url 'create_pres' %}">
-        <button class="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab"
-          aria-selected="true">Nuevo Servicio</button></a>
-    </li>
-    <li class="nav-item" role="presentation"><a href="{% url 'create_cli' %}">
-        <button class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab"
-          aria-selected="false">Nuevo Cliente</button></a>
-    </li>
-    <li class="nav-item" role="presentation"><a href="{% url 'listaPres' %}">
-        <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab"
-          aria-selected="false">Planilla de Presupuestos</button></a>
-    </li>
-    <li class="nav-item" role="presentation"><a href="{% url 'clientes' %}">
-        <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab"
-          aria-selected="false">Lista de Clientes</button></a>
-    </li>
-  </ul>
+        style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
+        <li class="nav-item" role="presentation"><a href="{% url 'home' %}">
+                <button class="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab"
+                    aria-selected="true">Inicio</button></a>
+        </li>
+        <li class="nav-item" role="presentation"><a href="{% url 'create_pres' %}">
+                <button class="nav-link  rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab"
+                    aria-selected="true">Nuevo Servicio</button></a>
+        </li>
+        <li class="nav-item" role="presentation"><a href="{% url 'create_cli' %}">
+                <button class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button"
+                    role="tab" aria-selected="false">Nuevo Cliente</button></a>
+        </li>
+        <li class="nav-item" role="presentation"><a href="{% url 'listaPres' %}">
+                <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button"
+                    role="tab" aria-selected="false">Planilla de Presupuestos</button></a>
+        </li>
+        <li class="nav-item" role="presentation"><a href="{% url 'clientes' %}">
+                <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button"
+                    role="tab" aria-selected="false">Lista de Clientes</button></a>
+        </li>
+    </ul>
   <br>
   {% load crispy_forms_tags %}
   <div class="row">
@@ -57,9 +61,8 @@
     </div>
   </div>
 
-
-
-  <a href="{% url 'home' %}">Atras</a>
+  <button type="button" class="btn btn-warning">
+    <a href="{% url 'home' %}">Inicio</a></button>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
     crossorigin="anonymous"></script>
